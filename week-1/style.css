@@ -1,0 +1,229 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* -----CSS reset--End------- */
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans TC",sans-serif;
+    background-color: #F2F2F2;
+    letter-spacing: 2px;
+}
+body a {
+    text-decoration: none;
+}
+
+/* --------Header Style-------- */
+h1 {
+    font-size: 2.5em;
+    color: #F29F05;
+    padding-top: 1.2rem;
+    padding:0.8rem;
+    /* 為什麼更改margin，margin-top沒有用? */
+}
+.banner,
+.main-header,
+.navlink {
+    text-align:center;
+}
+.navbar li {
+    margin:1em;
+    letter-spacing: 2px;
+    font-size: 1.4em;
+}
+.navbar a {
+    color: #F29F05;
+}
+.navbar a:hover {
+    color:#7c6106;
+    text-decoration: underline;
+}
+
+/* --------Banner Style-------- */
+.banner {
+    background-color: #F2B705;
+    letter-spacing: 2px;
+}
+.logo {
+    width:40%;
+}
+h2 {
+    font-size: 1.5em;
+    color:#F2F2F2;
+    margin: 0.8em;
+}
+.banner span {
+    display:inline-block;
+    font-size: 1em;
+    color:#F2F2F2;
+    margin-bottom: 1.5em;
+}
+
+
+/* --------Column Style--------- */
+.col {
+    text-align: center;
+}
+.col img{
+    width: 80%;
+}
+.col h3 {
+    font-size: 1.4em;
+    margin: 1.5em;
+    color: #F29F05;
+}
+.col p {
+    padding: 2em;
+    padding-top: 0;
+    line-height: 24px;
+    color: #3b2d01;
+}
+.button {
+    display: inline-block;
+    border-radius: 15px;
+    margin:2.5em;
+    padding: 0.8em;
+    
+    background-color: #F29F05;
+    color: #F2F2F2;
+    font-size: 1.2em;
+}
+
+/* --------Footer--------- */
+footer {
+    background-color:#F2B705 ;
+    padding: 2em 1em;
+    font-size: 0.6em; 
+    text-align: center;
+}
+
+
+/* -----Media Query Start---
+-------Middle Size ------ */
+@media only screen and (min-width: 640px) {
+    h1 {
+        font-size: 2em;
+    }
+    .navlink {
+        display: inline-block;
+        font-size: 1em;
+    }
+    .logo {
+        width: 30%;
+    }
+    .col {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .col p {
+        width: 35em;
+        
+    }
+    .col h3 {
+        margin: 1em;
+    }
+    .button {
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (min-width: 880px) {
+    .main-header {
+        display: flex;
+    }
+    h1 {
+        margin-right: auto;
+    }
+    .logo {
+        width:15%;
+    }
+    .col-container {
+        display:flex;
+        flex-direction: column;
+        
+        /* width:80%;
+        justify-content: center;
+        嘗試把中間的圖文置中，兩邊留白，但無效 */
+    }
+    .col {
+        display:flex;
+        flex-direction: row;
+    }
+    .first-col-text,
+    .second-col-text {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .first-col-text p,
+    .second-col-text p {
+        width: 500px;
+    }  
+    /* 改變兩個paragraph的width，圖片也跟著往中間靠*/
+    .col img {
+        width: 28em;
+    }
+    .second-col-img {
+        order:1;
+    }
+    .footer {
+        text-align: left;
+        padding: 1em 0.5em;
+    }
+}
+
+
+
+
+
+
