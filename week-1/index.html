@@ -15,12 +15,16 @@
 <body>
     <div class="container">
         <header class="main-header">
-            <h1>小雞專門店</h1>
-            <ul class="navbar">
-                <li class="navlink"><a href="#">挑選小雞</a></li>
-                <li class="navlink"><a href="#">擁有小雞</a></li>
-                <li class="navlink"><a href="#">客製小雞</a></li>
-            </ul>
+            <nav>
+                <h1>小雞專門店</h1>
+                <label for="switch"> <img class="burger" src="images/burger-icon.png"></label>
+                <input type="checkbox" id="switch">
+                <ul class="navbar">
+                    <li class="navlink"><a href="#">挑選小雞</a></li>
+                    <li class="navlink"><a href="#">擁有小雞</a></li>
+                    <li class="navlink"><a href="#">客製小雞</a></li>
+                </ul>
+            </nav>
         </header>
         <!-- banner -->
         <div class="banner">
@@ -29,11 +33,12 @@
             <span class="tagline">可愛小雞 值得擁有</span>
         </div>
 
+        <h2 class="section-title">為什麼選擇小雞</h2>
         <!-- 第一欄位 -->
         <div class="col-container">
             <div class="first col">
-                <div class="first-col-img">
-                    <img src="images/col_1.jpg" alt="在床上的一隻小雞">
+                <div class="test1">
+                    <img class="first-col-img" src="images/col_1.jpg" alt="在床上的一隻小雞">
                 </div>
                 <div class="first-col-text">
                     <h3>兼具可愛、食用</h3>
@@ -43,16 +48,17 @@
 
             <!-- 第二欄位 -->
             <div class="second col">
-                <div class="second-col-img">
-                    <img src="images/col_2.jpg" alt="小雞在小女孩手上">
+                <div class="test2">
+                    <img class="second-col-img" src="images/col_2.jpg" alt="小雞在小女孩手上">
                 </div>
                 <div class="second-col-text">
                     <h3>飼養簡單、實惠</h3>
                     <p>小雞飼養單純、費用低廉。沒有任何寵物經驗，也可輕鬆上手。小雞專門店提供所有你需要的服務!</p>
-                    <a class="button" href="https://www.google.com/">即刻擁有專屬小雞</a>
-                </div>
+                </div>    
             </div>
+            
         </div>
+        <a class="button" href="#">即刻擁有專屬小雞</a>
 
 
         <footer class="footer">

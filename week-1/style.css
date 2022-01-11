@@ -53,6 +53,13 @@ table {
 }
 
 body {
+    /* 為什麼在body設flex沒有辦法讓.button置中 */
+    /* 讓width超過1200px所有東西置中 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     font-family: "Noto Sans TC",sans-serif;
     background-color: #F2F2F2;
     letter-spacing: 2px;
@@ -60,42 +67,69 @@ body {
 body a {
     text-decoration: none;
 }
+.col-container {
+    max-width: 1200px;
+}
 
 /* --------Header Style-------- */
 h1 {
+    float:left;
     font-size: 2.5em;
     color: #F29F05;
     padding-top: 1.2rem;
-    padding:0.8rem;
-    /* 為什麼更改margin，margin-top沒有用? */
+    padding:1.2rem;
 }
 .banner,
-.main-header,
 .navlink {
     text-align:center;
 }
+input {
+    display: none;
+}
+.burger {
+    float: right;
+    width: 2.5em;
+    margin: 1.5em;
+}
+
+/* 選單列 */
 .navbar li {
-    margin:1em;
+    clear:both;
+    margin:0.5em;
     letter-spacing: 2px;
     font-size: 1.4em;
+    border-bottom: 1px solid #727070dc;
 }
 .navbar a {
+    display: block;
+    padding: 10px 0;
     color: #F29F05;
 }
 .navbar a:hover {
+    background-color: #F29F05;
     color:#7c6106;
-    text-decoration: underline;
+}
+
+/* 選單列效果 */
+.navbar {
+    max-height: 0;
+    overflow: hidden; 
+}
+input:checked ~ .navbar {
+    clear: both;
+    max-height: 600px;
 }
 
 /* --------Banner Style-------- */
 .banner {
+    clear: both;
     background-color: #F2B705;
     letter-spacing: 2px;
 }
 .logo {
     width:40%;
 }
-h2 {
+.headline {
     font-size: 1.5em;
     color:#F2F2F2;
     margin: 0.8em;
@@ -109,12 +143,19 @@ h2 {
 
 
 /* --------Column Style--------- */
+.section-title{
+    font-size: 1.6em;
+    margin: 1.5em;
+    color: #F29F05;
+}
+.section-title,
 .col {
     text-align: center;
 }
 .col img{
     width: 80%;
 }
+
 .col h3 {
     font-size: 1.4em;
     margin: 1.5em;
@@ -127,11 +168,14 @@ h2 {
     color: #3b2d01;
 }
 .button {
-    display: inline-block;
-    border-radius: 15px;
-    margin:2.5em;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 2em;
     padding: 0.8em;
+    width: 60%;
+    text-align: center;
     
+    border-radius: 15px;
     background-color: #F29F05;
     color: #F2F2F2;
     font-size: 1.2em;
@@ -148,74 +192,121 @@ footer {
 
 /* -----Media Query Start---
 -------Middle Size ------ */
-@media only screen and (min-width: 640px) {
+@media only screen 
+and (min-width: 500px) {
     h1 {
         font-size: 2em;
     }
-    .navlink {
-        display: inline-block;
-        font-size: 1em;
-    }
+
     .logo {
         width: 30%;
     }
-    .col {
-        display:flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .col p {
-        width: 35em;
-        
-    }
-    .col h3 {
-        margin: 1em;
-    }
-    .button {
-        margin-top: 10px;
-    }
-}
 
-@media only screen and (min-width: 880px) {
-    .main-header {
-        display: flex;
-    }
-    h1 {
-        margin-right: auto;
-    }
-    .logo {
-        width:15%;
-    }
+/* -----Middle Size Column Section------- */
     .col-container {
         display:flex;
         flex-direction: column;
-        
-        /* width:80%;
-        justify-content: center;
-        嘗試把中間的圖文置中，兩邊留白，但無效 */
     }
     .col {
         display:flex;
         flex-direction: row;
+        justify-content: center;
+        margin-bottom: 1.5em;
+    }
+    .col img {
+        width: 70%;
+    }
+    .test2 {
+        order:1;
     }
     .first-col-text,
     .second-col-text {
         display:flex;
         flex-direction: column;
         align-items: center;
+        flex-wrap: wrap;
+        width: 550%;
+    }
+    
+    .col h3 {
+        margin: 0.5em;
+        font-size: 1.2em;
+    }
+    .col p {
+        padding: 0.5em;
+        margin: 0.5em;
+        font-size: 0.9em;
+        line-height: 20px;
+    }
+    
+    .button {
+        font-size: 1.2em;
+        width: 50%;
+    }
+}
+
+/* -----Media Query ------
+-------Large Size ------ */
+@media only screen 
+and (min-width: 800px) {
+    /* 關掉漢堡 */
+    label {
+        display: none;
+    }
+    .navbar {
+        float: right;
+        max-height: 70px;
+    }
+    .navlink {
+        display: inline-block;
+        font-size: 0.8em;
+    }
+    .navbar li {
+        border: none;
+        padding-top: 10px;
+        color:#F29F05;
+    }
+    .logo {
+        width:15%;
+    }
+    
+/* -----Large Size Column Section------- */
+    .col-container {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .first-col-text,
+    .second-col-text {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+    }
+    .col h3 {
+        margin: 0.8em;
+        font-size: 1.4em;
     }
     .first-col-text p,
     .second-col-text p {
-        width: 500px;
+        /* width: 300px;  */
+
+        font-size: 1.1em;
+        line-height: 24px;
     }  
-    /* 改變兩個paragraph的width，圖片也跟著往中間靠*/
     .col img {
-        width: 28em;
+        width: 25em;
     }
-    .second-col-img {
+    .test2 {
         order:1;
     }
+    .button {
+        width: 30%;
+        margin-top: 2em;
+    }
+
     .footer {
         text-align: left;
         padding: 1em 0.5em;
