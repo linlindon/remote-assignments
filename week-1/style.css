@@ -67,9 +67,10 @@ body {
 body a {
     text-decoration: none;
 }
-.col-container {
-    /* max-width: 1200px; */
+.container {
+    max-width: 1200px;
 }
+
 
 /* --------Header Style-------- */
 h1 {
@@ -207,15 +208,21 @@ and (min-width: 500px) {
         display:flex;
         flex-direction: column;
     }
+
+
     .col {
         display:flex;
         flex-direction: row;
         justify-content: center;
         margin-bottom: 1.5em;
     }
-    .col img {
-        width: 70%;
+    .test1,
+    .test2 {
+        display: flex;
+        flex:1;
+        justify-content: center;
     }
+
     .test2 {
         order:1;
     }
@@ -223,9 +230,9 @@ and (min-width: 500px) {
     .second-col-text {
         display:flex;
         flex-direction: column;
-        align-items: center;
+        justify-content: center;
+        flex:1;
         flex-wrap: wrap;
-        width: 550%;
     }
     
     .col h3 {
@@ -233,8 +240,8 @@ and (min-width: 500px) {
         font-size: 1.2em;
     }
     .col p {
-        padding: 0.5em;
-        margin: 0.5em;
+        padding: 1.2em;
+        margin: 0.2em;
         font-size: 0.9em;
         line-height: 20px;
     }
@@ -283,7 +290,6 @@ and (min-width: 800px) {
         display:flex;
         flex-direction: column;
         align-items: center;
-        width: 60%;
     }
     .col h3 {
         margin: 0.8em;
