@@ -68,7 +68,7 @@ body a {
     text-decoration: none;
 }
 .col-container {
-    max-width: 1200px;
+    /* max-width: 1200px; */
 }
 
 /* --------Header Style-------- */
@@ -291,14 +291,16 @@ and (min-width: 800px) {
     }
     .first-col-text p,
     .second-col-text p {
-        /* width: 300px;  */
-
         font-size: 1.1em;
         line-height: 24px;
     }  
+
+    /* 限制img width會影響到視窗大到約1420以上
+    兩邊會出現留白，但不知道為什麼 */
     .col img {
         width: 25em;
-    }
+    } 
+
     .test2 {
         order:1;
     }
