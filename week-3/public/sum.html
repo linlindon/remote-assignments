@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Page</title>
+</head>
+<body>
+    <h1>This is sum page.</h1>
+    <!-- <form action='/getData' method='post'> -->
+        <label>Enter the number</label>
+        <input name='number' type="number" id='number'>
+        <button type="submit" id='button'>Submit</button>
+    <!-- </form> -->
+    <div id='result'></div>
+    
+    
+    <script>
+        const button = document.getElementById('button');
+        
+        //提取 user input到number
+        button.addEventListener('click', () => {
+            const input = document.querySelector('#number');
+            let number = input.value
+            
+            let xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                console.log(xhr.responseText);
+                document.getElementById('result').innerHTML = xhr.responseText;  
+            } 
+        };
+            xhr.open('GET', `http://localhost:3000/getData?number=${number}`);
+            xhr.send();
+        });
+
+
+    </script>
+
+</body>
+</html>
