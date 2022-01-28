@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href='//fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="">
+    <title>Products Information</title>
+    <script>
+      
+        var xhr = new XMLHttpRequest();
+        function ajax(src, callback) { 
+            xhr.onreadystatechange = function() {
+              if (xhr.readyState === 4) {
+                  callback(xhr)
+              }
+            }
+            xhr.open('GET', src)
+            xhr.send();
+       };
+
+      
+        function render(data) {
+            let products = JSON.parse(data.responseText);
+            for (let i = 0; i < products.length; i += 1) {
+                    const node = document.createElement('div');
+                    const textnode = document.createTextNode(`Name: ${products[i].name}`);
+                    node.appendChild(textnode);
+                    document.querySelector(`.name${i+1}`).appendChild(node);
+                  }
+                  
+                  for (let i = 0; i < products.length; i += 1) {
+                    const node = document.createElement('div');
+                    const textnode = document.createTextNode(`Price: ${products[i].price}`);
+                    node.appendChild(textnode);
+                    document.querySelector(`.price${i+1}`).appendChild(node);
+                  }
+                  
+                  for (let i = 0; i < products.length; i += 1) {
+                    const node = document.createElement('div');
+                    const textnode = document.createTextNode(`Description: ${products[i].description}`);
+                    node.appendChild(textnode);
+                    document.querySelector(`.description${i+1}`).appendChild(node);
+                  }
+            };
+       
+
+        ajax(
+          
+            'https://appworks-school.github.io/Remote-Aassigiment-Data/products', 
+            function(response) {
+              render(response);
+            }   
+        );
+        
+    </script>
+</head>
+
+<body>
+    <div class="grid-container centered">
+        <h1>Products Information</h1>
+        <div class='product1'>
+            <h2>product1</h2>
+            <div class='name1'></div>
+            <div class='price1'></div>
+            <div class='description1'></div>
+        </div>
+      
+        <div class='product2'>
+            <h2>product2</h2>
+            <div class='name2'></div>
+            <div class='price2'></div>
+            <div class='description2'></div>
+        </div>
+        
+        <div class='product3'>
+            <h2>product3</h2>
+            <div class='name3'></div>
+            <div class='price3'></div>
+            <div class='description3'></div>
+        </div>
+      
+
+        <div class='product'>
+      
+        </div>
+
+    
+    </div>
+    
+</body>
+
+</html>

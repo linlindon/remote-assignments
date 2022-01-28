@@ -1,0 +1,226 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* -----CSS reset--End------- */
+* {
+  box-sizing: border-box;
+}
+
+body a {
+  text-decoration: none;
+}
+.banner {
+    text-align:center;
+}
+
+/* --------Header Style-------- */
+.main-header {
+    display: flex;
+    align-items: center;
+    /* 讓navlink垂直置中 */
+}
+
+h1 {
+    margin-right: auto;
+    padding: 1em;
+    font-size: 1.5em;
+}
+
+.burger {
+    width: 2.5em;
+    margin: 1.5em;
+}
+
+/* .burger-navbar .close-bnt {
+    display: inline-block;
+    position: fixed;
+    top: 2px;
+    right: 8px;
+
+    font-size: 25px;
+} */
+
+
+/* .burger-navbar {
+    display: inline-block;
+    position: fixed;
+
+    width: 250px;
+    height: 100%;
+    
+    top: 0;
+    bottom: 0;
+    right: 0;
+    
+    background-color: #FFF;
+    box-shadow: -2px 0px 2px rgb(206, 206, 206);
+} */
+
+.navlink {
+    margin: 1.5em;
+}
+.navlink a {
+    font-size: 18px;
+    color: black;
+}
+.burger-navbar.disapear,
+.close-bnt {
+    display: none;
+}
+
+
+/* --------Banner Style-------- */
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 8em;
+    font-size: 1.8em;
+    letter-spacing: 2px;
+    background-color: #0394fc;
+    color: #FFF ;
+    
+}
+
+/* --------Column Style--------- */
+
+.section-title{
+    margin: 1.5em;
+    text-align: center;
+    
+    font-size: 1.6em;
+    color: #0394fc;
+}
+.first-col-container,
+.second-col-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+  width: 70%;
+  height: 12em;
+  margin: 1em;
+  
+  text-align: center;
+  background-color: #93cffa;
+}
+
+.button {
+    display: flex;
+    justify-content: center; 
+
+    padding-bottom: 1em;
+}    
+.button a {    
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    background-color: #0394fc;
+    color: #FFF;
+    font-size: 1.2em;
+}
+
+
+
+/* -----Media Query Start---
+-------Middle Size ------ */
+@media only screen 
+and (min-width: 500px) {
+  
+    .first-col-container,
+    .second-col-container {
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .box {
+        width: 40%;
+    }
+}
+
+
+/* -----Media Query ------
+-------Large Size ------ */
+@media only screen 
+and (min-width: 800px) {
+    
+    .burger-navbar.disapear {
+        display: inline-block;
+        position: static;
+        display: inline-block;
+        box-shadow: none;
+        width: 60%;
+        text-align: right;  
+    }
+    .burger,
+    .burger-navbar .close-bnt {
+        display: none;
+    }
+    
+    .navlink {
+        display: inline-block;
+        margin: 0.2em;
+        padding: 0em 0.5em;
+        font-size: 1.2em;
+        letter-spacing: 1px;
+    }
+}    
+
+
+/* -----Media Query ------
+-------Giant Size ------ */
+@media only screen 
+and (min-width: 1200px) {
+    .box {
+        max-width: 600px;
+    }
+}       
+
