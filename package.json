@@ -1,0 +1,10 @@
+{
+  "homepage": "https://linlindon.github.io/remote-assignments/week-4/React/my-app",
+  "dependencies": {
+    "gh-pages": "^3.2.3"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  }
+}
