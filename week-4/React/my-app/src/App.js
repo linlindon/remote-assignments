@@ -7,8 +7,6 @@ class App extends Component {
   state = {
     burgerClass: 'burger-navbar disapear',
     closeClass: 'close-bnt',
-
-    //sectionClass: 'noshow',
     sectionShow: false
   }
 
@@ -27,7 +25,7 @@ class App extends Component {
   // call to action button
   toggleButton = () => {
     this.setState({
-      sectionShow: !this.sectionShow
+      sectionShow: !this.state.sectionShow
     });
   };  
 
@@ -86,9 +84,6 @@ class App extends Component {
             <button className="button" onClick={this.toggleButton}>Call To Action</button>
           </div>
 
-          {/* <Button onClick={this.toggleButton} /> */}
-
-          {/* style={{display:this.state.style}} */}
           <div className="second-col-container" style={{display: this.state.sectionShow ? 'flex':'none'}}>
             {/* 第五欄位 */}
             <div className="fifth box">
