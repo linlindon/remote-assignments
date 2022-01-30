@@ -1,6 +1,6 @@
 {
-  "homepage": "https://linlindon.github.io/remote-assignments/week-4/React/my-app",
   "name": "my-app",
+  "homepage": "https://linlindon.github.io/remote-assignments/week-4/React/my-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
