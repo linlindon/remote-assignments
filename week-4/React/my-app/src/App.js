@@ -5,14 +5,29 @@ import Button from './Button';
 class App extends Component {
 
   state = {
-    isCallToAction: false, 
-    style: 'none'
-  }
-  
+    burgerClass: 'burger-navbar disapear',
+    closeClass: 'close-bnt',
 
+    //sectionClass: 'noshow',
+    sectionShow: false
+  }
+
+  toggleBurger = () => {
+    this.setState({
+      burgerClass: 'burger-navbar'
+    });
+  }
+
+  toggleCloseBnt = () => {
+    this.setState({
+      burgerClass: 'burger-navbar disapear',
+    });
+  };
+
+  // call to action button
   toggleButton = () => {
     this.setState({
-      style: 'flex'
+      sectionShow: !this.sectionShow
     });
   };  
 
@@ -21,10 +36,12 @@ class App extends Component {
       <div className="App">
         <header className="main-header">
           <h1>Web Site Title/Logo</h1>
-          <button> <img className="burger" src="https://i.imgur.com/29QhEBe.png" /></button>
+          <button className='burger-bnt' onClick={this.toggleBurger}> 
+            <img className="burger" src="https://i.imgur.com/29QhEBe.png" />
+          </button>
 
-          <div className="burger-navbar disapear">
-            <span className="close-bnt">x</span>
+          <div className={this.state.burgerClass}>
+            <span className="close-bnt" onClick={this.toggleCloseBnt}>x</span>
             <ul>
               <li className="navlink"><a href="#">Item 1</a></li>
               <li className="navlink"><a href="#">Item 2</a></li>
@@ -65,11 +82,14 @@ class App extends Component {
             </div>
           </div>
 
-          
-          <Button onClick={this.toggleButton} />
+          <div className="action" >
+            <button className="button" onClick={this.toggleButton}>Call To Action</button>
+          </div>
+
+          {/* <Button onClick={this.toggleButton} /> */}
 
           {/* style={{display:this.state.style}} */}
-          <div className="second-col-container" style={{display:this.state.style}} >
+          <div className="second-col-container" style={{display: this.state.sectionShow ? 'flex':'none'}}>
             {/* 第五欄位 */}
             <div className="fifth box">
               <p>Content Box 5</p>
