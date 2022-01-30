@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/remote-assignments/week-4/React/my-app/static/css/main.687907ed.css",
+    "main.js": "/remote-assignments/week-4/React/my-app/static/js/main.a9a7ce0c.js",
+    "static/js/787.28cb0dcd.chunk.js": "/remote-assignments/week-4/React/my-app/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/remote-assignments/week-4/React/my-app/index.html",
+    "main.687907ed.css.map": "/remote-assignments/week-4/React/my-app/static/css/main.687907ed.css.map",
+    "main.a9a7ce0c.js.map": "/remote-assignments/week-4/React/my-app/static/js/main.a9a7ce0c.js.map",
+    "787.28cb0dcd.chunk.js.map": "/remote-assignments/week-4/React/my-app/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.687907ed.css",
+    "static/js/main.a9a7ce0c.js"
+  ]
+}
