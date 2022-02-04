@@ -76,6 +76,11 @@ h1 {
     margin: 1.5em;
 }
 
+.burger-bnt {
+    background-color: #FFF;
+    border: none;
+}
+
 .burger-navbar .close-bnt {
     display: inline-block;
     position: fixed;
